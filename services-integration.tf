@@ -34,10 +34,10 @@ resource "aws_sqs_queue_policy" "tf-sqs-policy" {
     Version = "2012-10-17"
     Statement = [
       {
-        Effect = "Allow"
+        Effect    = "Allow"
         Principal = "*"
-        Action = "sqs:SendMessage"
-        Resource = aws_sqs_queue.tf_queue.arn
+        Action    = "sqs:SendMessage"
+        Resource  = aws_sqs_queue.tf_queue.arn
         Condition = {
           ArnEquals = {
             "aws:SourceArn" = aws_sns_topic.tf-sns-topic.arn
