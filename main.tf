@@ -7,16 +7,17 @@ terraform {
       version = "~> 5.0"
     }
   }
+}
 
 # To comment backend block if working on local and terraform state file is locally stored
-  backend "s3" {
-    bucket = "sctp-ce7-tfstate"
-    key    = "terraform-ex-ec2-lcchua.tfstate"
-    region = "us-east-1"
-  }
-}
+#  backend "s3" {
+#    bucket = "sctp-ce7-tfstate"
+#    key    = "terraform-ex-ec2-lcchua.tfstate"
+#    region = "us-east-1"
+#  }
 
 # Indicate the provider's region
 provider "aws" {
   region = "us-east-1"
+  profile = "clean_up"
 }
