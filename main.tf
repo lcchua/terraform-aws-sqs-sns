@@ -19,5 +19,4 @@ terraform {
 # Indicate the provider's region
 provider "aws" {
   region = "us-east-1"
-  profile = "clean_up"
 }
